@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="./vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <style>
 
@@ -196,7 +197,7 @@
       <div class="cont-title">可樂罐</div>
       <div class="cont-main">
         <div class="cont-checkbox">
-          <input class="checkbox" type="checkbox" id="myCheckbox-1"  value="鐵罐" onchange="toggleImage(this)" />
+          <input  type="checkbox" id="myCheckbox-1"  value="鐵罐" onchange="toggleImage(this)" />
           <label for="myCheckbox-1">
             <img
               src="./carbon001.png"
@@ -211,7 +212,7 @@
         </div>
 
         <div class="cont-checkbox">
-          <input class="checkbox" type="checkbox" id="myCheckbox-2" value="鋁罐"  onchange="toggleImage(this)" />
+          <input type="checkbox" id="myCheckbox-2" value="鋁罐"  onchange="toggleImage(this)" />
           <label for="myCheckbox-2">
             <img
               src="./carbon001.png"
@@ -444,136 +445,71 @@
       </div>
       <!-- 組別3 -->
 
+      <button type="button" class="btn btn-primary" onclick="productSearch()"><span
+        id=""></span>加入比較</button>
+
     </div>
 
 
 
-      <!-- 交通 -->
-      <div class="col-md-12 col-sm-12 ">
-
-
-        <div class="x_content">
-
-
-
-
-                <div class="field item form-group" >
-                    <div class="col-md-8 col-sm-8">
-
-                    <table id="material" class="table table-striped table-bordered dataTable no-footer dtr-inline" style="width:100%;float:left;text-align:center;">
-                        <thead style="background-color:#5F9EA0;color:white">
-                          <tr>
-                            <th style="color:white">品項</th>
-                            <th style="color:white">TYPE</th>
-                            <th style="color:white">說明</th>
-                            <th style="color:white">重量(Kg)</th>
-                            <th style="color:white">碳排放量</th>
-                            <th style="color:white">備註</th>
-                          </tr>
-
-                        </thead>
-                        <tbody id="material_tbody">
-                      </tbody>
-                   </table>
-                   </div>
-
-                 </div>
+          <!--MODAL LEFT-->
+            <div class="modal modal-left fade" id="compare" tabindex="0" role="dialog"
+            aria-labelledby="left_modal_xl" style="z-index: 99999; box-shadow: 15px 15px 15px #363635; overflow: scroll;">
+            <div class="modal-dialog modal-xl" role="document" style="    box-shadow: 0 0 3px #363635; z-index: 99999; width: 80%; ">
+                <div class="modal-content" >
+                    <div class="modal-header">
+                        <div class="row">
+                            <h3 style="margin:0px"><i class="fa-solid fa-swords text-info fa-lg"></i></i> 比較結果 </h3>
+                        </div>
 
 
 
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="border:0; margin:0px; padding:0">
+
+                      <table id="material" class="table table-striped table-bordered dataTable no-footer dtr-inline" style="width:100%;float:left;text-align:center;">
+                          <thead style="background-color:#5F9EA0;color:white">
+                            <tr>
+                              <th style="color:white">品項</th>
+                              <th style="color:white">TYPE</th>
+                              <th style="color:white">說明</th>
+                              <th style="color:white">重量(Kg)</th>
+                              <th style="color:white">碳排放量</th>
+                              <th style="color:white">備註</th>
+                            </tr>
+
+                          </thead>
+                          <tbody id="material_tbody">
+                        </tbody>
+                     </table>
 
 
+                    </div>
+
+                  </div>
               </div>
-
-          </div>
-          <!-- 交通 -->
-
+            </div>
+            <!--MODAL LEFT-->
 
 
 
 
 
 
+<!-- <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
 
 
-
-<script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 <script>
 
-
-  function productSearch(list){
-    console.log(list)
-      var item = []
-      item.push({item:'鐵罐',carbon_val:1,type:'食物',weight:10})
-      item.push({item:'鋁罐',carbon_val:2,type:'食物',weight:10})
-      item.push({item:'玻璃罐',carbon_val:3,type:'食物',weight:10})
-      item.push({item:'PCB_A',carbon_val:4,type:'PCB',weight:10})
-      item.push({item:'PCB_B',carbon_val:5,type:'PCB',weight:10})
-      item.push({item:'PCB_C',carbon_val:6,type:'PCB',weight:10})
-      item.push({item:'iphone',carbon_val:7,type:'手機',weight:10})
-      item.push({item:'iphone_pro',carbon_val:8,type:'手機',weight:10})
-      item.push({item:'iphone_pro_max',carbon_val:9,type:'手機',weight:10})
-      item.push({item:'邊框_1',carbon_val:7,type:'邊框',weight:10})
-      item.push({item:'邊框_2',carbon_val:8,type:'邊框',weight:10})
-      item.push({item:'邊框_3',carbon_val:9,type:'邊框',weight:10})
-      item.push({item:'A',carbon_val:7,type:'A',weight:1})
-      item.push({item:'B',carbon_val:8,type:'A',weight:1})
-      item.push({item:'C',carbon_val:9,type:'A',weight:1})
-
-
-      var table = document.getElementById('material');
-      var tbody = document.getElementById('material_tbody');
-      tbody.innerText =''
-      // var partnumber_user_key = document.getElementById(id);
-
-
-      for(var k=0;k<list.length;k++){
-        // console.log(list[k])
-          var tr = document.createElement('tr');
-          for(var i=0;i<item.length;i++){
-
-              if(item[i].item==list[k]){
-                  // console.log(item[i].item)
-                for(var j=0;j<6;j++){
-                  if(j==0){
-                    var td = document.createElement('td');
-                    td.innerText = item[i].item
-                  }
-                  if(j==1){
-                    var td = document.createElement('td');
-                    td.innerText = item[i].type
-                  }
-                  if(j==2){
-                    var td = document.createElement('td');
-                    td.innerText = '-'
-                  }
-                  if(j==3){
-                    var td = document.createElement('td');
-                    td.innerText = item[i].weight
-                  }
-                  if(j==4){
-                    var td = document.createElement('td');
-                    td.innerText = item[i].carbon_val
-                  }
-
-                  if(j==5){
-                    var td = document.createElement('td');
-                    td.innerText = '-'
-                  }
-
-                    tr.appendChild(td);
-                }
-
-                    tbody.appendChild(tr)
-              }
-            }
-          }
-
-
-  }
-
   var list = [];
+
+
   function toggleImage(obj){
 
 
@@ -589,8 +525,82 @@
           }
         }
       }
-      productSearch(list)
+      // productSearch(list)
     }
+
+
+    function productSearch(){
+       $("#compare").modal('show');
+      console.log(list)
+        var item = []
+        item.push({item:'鐵罐',carbon_val:1,type:'食物',weight:10})
+        item.push({item:'鋁罐',carbon_val:2,type:'食物',weight:10})
+        item.push({item:'玻璃罐',carbon_val:3,type:'食物',weight:10})
+        item.push({item:'PCB_A',carbon_val:4,type:'PCB',weight:10})
+        item.push({item:'PCB_B',carbon_val:5,type:'PCB',weight:10})
+        item.push({item:'PCB_C',carbon_val:6,type:'PCB',weight:10})
+        item.push({item:'iphone',carbon_val:7,type:'手機',weight:10})
+        item.push({item:'iphone_pro',carbon_val:8,type:'手機',weight:10})
+        item.push({item:'iphone_pro_max',carbon_val:9,type:'手機',weight:10})
+        item.push({item:'邊框_1',carbon_val:7,type:'邊框',weight:10})
+        item.push({item:'邊框_2',carbon_val:8,type:'邊框',weight:10})
+        item.push({item:'邊框_3',carbon_val:9,type:'邊框',weight:10})
+        item.push({item:'A',carbon_val:7,type:'A',weight:1})
+        item.push({item:'B',carbon_val:8,type:'A',weight:1})
+        item.push({item:'C',carbon_val:9,type:'A',weight:1})
+
+
+        var table = document.getElementById('material');
+        var tbody = document.getElementById('material_tbody');
+        tbody.innerText =''
+        // var partnumber_user_key = document.getElementById(id);
+
+
+        for(var k=0;k<list.length;k++){
+          // console.log(list[k])
+            var tr = document.createElement('tr');
+            for(var i=0;i<item.length;i++){
+
+                if(item[i].item==list[k]){
+                    // console.log(item[i].item)
+                  for(var j=0;j<6;j++){
+                    if(j==0){
+                      var td = document.createElement('td');
+                      td.innerText = item[i].item
+                    }
+                    if(j==1){
+                      var td = document.createElement('td');
+                      td.innerText = item[i].type
+                    }
+                    if(j==2){
+                      var td = document.createElement('td');
+                      td.innerText = '-'
+                    }
+                    if(j==3){
+                      var td = document.createElement('td');
+                      td.innerText = item[i].weight
+                    }
+                    if(j==4){
+                      var td = document.createElement('td');
+                      td.innerText = item[i].carbon_val
+                    }
+
+                    if(j==5){
+                      var td = document.createElement('td');
+                      td.innerText = '-'
+                    }
+
+                      tr.appendChild(td);
+                  }
+
+                      tbody.appendChild(tr)
+                }
+              }
+            }
+
+
+    }
+
 
 
 
