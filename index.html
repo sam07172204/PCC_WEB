@@ -38,6 +38,144 @@
   }
 
 
+
+  * {
+    font-family: Lato;
+    margin: 0;
+    padding: 0;
+    --transition: 0.15s;
+    --border-radius: 0.5rem;
+    --background: #ffc107;
+    --box-shadow: #ffc107;
+  }
+
+  .cont-bg {
+    min-height: 50vh;
+    background-image: radial-gradient(
+      circle farthest-corner at 7.2% 13.6%,
+      #59CE8F 0%,
+      #2B7A0B 90%
+    );
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cont-title {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .cont-main {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .cont-checkbox {
+    width: 80px;
+    height: 70px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    background: white;
+    transition: transform var(--transition);
+  }
+
+  .cont-checkbox {
+    margin-bottom: 0.75rem;
+    margin-right: 0.75rem;
+  }
+
+  .cont-checkbox:active {
+    transform: scale(0.9);
+  }
+
+  input {
+    display: none;
+  }
+
+  input:checked + label {
+    opacity: 1;
+    box-shadow: 0 0 0 3px var(--background);
+  }
+
+  input:checked + label img {
+    -webkit-filter: none; /* Safari 6.0 - 9.0 */
+    filter: none;
+  }
+
+  input:checked + label .cover-checkbox {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  input:checked + label .cover-checkbox svg {
+    stroke-dashoffset: 0;
+  }
+
+  label {
+    display: inline-block;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    opacity: 0.6;
+  }
+
+  label img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    clip-path: polygon(0% 0%, 100% 0, 100% 81%, 50% 100%, 0 81%);
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+  }
+
+  label .cover-checkbox {
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--box-shadow);
+    border: 2px solid #fff;
+    transition: transform var(--transition),
+      opacity calc(var(--transition) * 1.2) linear;
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  label .cover-checkbox svg {
+    width: 13px;
+    height: 11px;
+    display: inline-block;
+    vertical-align: top;
+    fill: none;
+    margin: 5px 0 0 3px;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 16px;
+    transition: stroke-dashoffset 0.4s ease var(--transition);
+    stroke-dashoffset: 16px;
+  }
+
+  label .info {
+    text-align: center;
+    margin-top: 0.2rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
 </style>
 
 
@@ -53,49 +191,263 @@
 
 
 
+    <div class="cont-bg">
+      <!-- 可樂 -->
+      <div class="cont-title">可樂罐</div>
+      <div class="cont-main">
+        <div class="cont-checkbox">
+          <input class="checkbox" type="checkbox" id="myCheckbox-1"  value="鐵罐" onchange="toggleImage(this)" />
+          <label for="myCheckbox-1">
+            <img
+              src="./carbon001.png"
+            />
+            <span class="cover-checkbox">
+              <svg viewBox="0 0 12 10">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg>
+            </span>
+            <div class="info">鐵罐</div>
+          </label>
+        </div>
 
+        <div class="cont-checkbox">
+          <input class="checkbox" type="checkbox" id="myCheckbox-2" value="鋁罐"  onchange="toggleImage(this)" />
+          <label for="myCheckbox-2">
+            <img
+              src="./carbon001.png"
+            />
+            <span class="cover-checkbox">
+              <svg viewBox="0 0 12 10">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg>
+            </span>
+            <div class="info">鋁罐</div>
+          </label>
+        </div>
 
-  <!-- 交通 -->
-  <div class="col-md-12 col-sm-12 " >
-
-
-    <div class="x_content">
-
-
-
-
-            <div class="field item form-group" >
-
-              <label class="control-label col-md-1 col-sm-1 "><h4>請選擇物質</h4></label>
-
-                  <div class="col-md-8 col-sm-8">
-                    <select id="heard" class="form-control" required>
-                      <option value="">Choose..</option>
-                      <option value="test1">test1</option>
-                      <option value="test2">test2</option>
-                      <option value="test3">test3</option>
-                    </select>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                      <button type="button" class="btn btn-success" onclick="productSearch('heard')">查詢</button>
-
-                    </div>
-                  </div>
-
-
-
-
-
-
-             </div>
-
-
-
-
-
-          </div>
+        <div class="cont-checkbox">
+          <input name="checkbox" type="checkbox" id="myCheckbox-3" value="玻璃罐"  onchange="toggleImage(this)" />
+          <label for="myCheckbox-3">
+            <img
+              src="./carbon001.png"
+            />
+            <span class="cover-checkbox">
+              <svg viewBox="0 0 12 10">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg>
+            </span>
+            <div class="info">玻璃罐</div>
+          </label>
+        </div>
 
       </div>
-      <!-- 交通 -->
+      <!-- 可樂 -->
+      <!-- 組別2 -->
+      <div class="cont-title">PCB</div>
+      <div class="cont-main">
+        <div class="cont-checkbox">
+          <input name="checkbox" type="checkbox" id="myCheckbox-4" value="PCB_A"   onchange="toggleImage(this)" />
+          <label for="myCheckbox-4">
+            <img
+              src="./carbon001.png"
+            />
+            <span class="cover-checkbox">
+              <svg viewBox="0 0 12 10">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg>
+            </span>
+            <div class="info">PCB A</div>
+          </label>
+        </div>
+
+        <div class="cont-checkbox">
+          <input name="checkbox" type="checkbox" id="myCheckbox-5"  value="PCB_B"  onchange="toggleImage(this)" />
+          <label for="myCheckbox-5">
+            <img
+              src="./carbon001.png"
+            />
+            <span class="cover-checkbox">
+              <svg viewBox="0 0 12 10">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg>
+            </span>
+            <div class="info">PCB B</div>
+          </label>
+        </div>
+
+        <div class="cont-checkbox">
+          <input name="checkbox" type="checkbox" id="myCheckbox-6"  value="PCB_C"   onchange="toggleImage(this)" />
+          <label for="myCheckbox-6">
+            <img
+              src="./carbon001.png"
+            />
+            <span class="cover-checkbox">
+              <svg viewBox="0 0 12 10">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg>
+            </span>
+            <div class="info">PCB C</div>
+          </label>
+        </div>
+
+      </div>
+      <!-- 組別2 -->
+
+      <!-- 組別3 -->
+      <div class="cont-title">iphone</div>
+      <div class="cont-main">
+        <div class="cont-checkbox">
+          <input name="checkbox" type="checkbox" id="myCheckbox-7" value="iphone"    onchange="toggleImage(this)" />
+          <label for="myCheckbox-7">
+            <img
+              src="./carbon001.png"
+            />
+            <span class="cover-checkbox">
+              <svg viewBox="0 0 12 10">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg>
+            </span>
+            <div class="info">iphone </div>
+          </label>
+        </div>
+
+        <div class="cont-checkbox">
+          <input name="checkbox" type="checkbox" id="myCheckbox-8" value="iphone_pro"  onchange ="toggleImage(this)" />
+          <label for="myCheckbox-8">
+            <img
+              src="./carbon001.png"
+            />
+            <span class="cover-checkbox">
+              <svg viewBox="0 0 12 10">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg>
+            </span>
+            <div class="info">iphone pro </div>
+          </label>
+        </div>
+
+        <div class="cont-checkbox">
+          <input name="checkbox" type="checkbox" id="myCheckbox-9" value="iphone_pro_max" onchange="toggleImage(this)" />
+          <label for="myCheckbox-9">
+            <img
+              src="./carbon001.png"
+            />
+            <span class="cover-checkbox">
+              <svg viewBox="0 0 12 10">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg>
+            </span>
+            <div class="info">iphone pro max</div>
+          </label>
+        </div>
+
+      </div>
+      <!-- 組別3 -->
+      <!-- 組別4 -->
+      <div class="cont-title">邊框</div>
+      <div class="cont-main">
+        <div class="cont-checkbox">
+          <input name="checkbox" type="checkbox" id="myCheckbox-10" value="邊框_1"    onchange="toggleImage(this)" />
+          <label for="myCheckbox-10">
+            <img
+              src="./carbon001.png"
+            />
+            <span class="cover-checkbox">
+              <svg viewBox="0 0 12 10">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg>
+            </span>
+            <div class="info">邊框_1 </div>
+          </label>
+        </div>
+
+        <div class="cont-checkbox">
+          <input name="checkbox" type="checkbox" id="myCheckbox-11" value="邊框_2"  onchange ="toggleImage(this)" />
+          <label for="myCheckbox-11">
+            <img
+              src="./carbon001.png"
+            />
+            <span class="cover-checkbox">
+              <svg viewBox="0 0 12 10">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg>
+            </span>
+            <div class="info">邊框_2</div>
+          </label>
+        </div>
+
+        <div class="cont-checkbox">
+          <input name="checkbox" type="checkbox" id="myCheckbox-12" value="邊框_3" onchange="toggleImage(this)" />
+          <label for="myCheckbox-12">
+            <img
+              src="./carbon001.png"
+            />
+            <span class="cover-checkbox">
+              <svg viewBox="0 0 12 10">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg>
+            </span>
+            <div class="info">邊框_3</div>
+          </label>
+        </div>
+
+      </div>
+      <!-- 組別4 -->
+      <!-- 組別3 -->
+      <div class="cont-title">A</div>
+      <div class="cont-main">
+        <div class="cont-checkbox">
+          <input name="checkbox" type="checkbox" id="myCheckbox-13" value="A"    onchange="toggleImage(this)" />
+          <label for="myCheckbox-13">
+            <img
+              src="./carbon001.png"
+            />
+            <span class="cover-checkbox">
+              <svg viewBox="0 0 12 10">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg>
+            </span>
+            <div class="info">A </div>
+          </label>
+        </div>
+
+        <div class="cont-checkbox">
+          <input name="checkbox" type="checkbox" id="myCheckbox-14" value="B"  onchange ="toggleImage(this)" />
+          <label for="myCheckbox-14">
+            <img
+              src="./carbon001.png"
+            />
+            <span class="cover-checkbox">
+              <svg viewBox="0 0 12 10">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg>
+            </span>
+            <div class="info">B</div>
+          </label>
+        </div>
+
+        <div class="cont-checkbox">
+          <input name="checkbox" type="checkbox" id="myCheckbox-15" value="C" onchange="toggleImage(this)" />
+          <label for="myCheckbox-15">
+            <img
+              src="./carbon001.png"
+            />
+            <span class="cover-checkbox">
+              <svg viewBox="0 0 12 10">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg>
+            </span>
+            <div class="info">C</div>
+          </label>
+        </div>
+
+      </div>
+      <!-- 組別3 -->
+
+    </div>
+
+
+
       <!-- 交通 -->
       <div class="col-md-12 col-sm-12 ">
 
@@ -146,64 +498,103 @@
 
 
 <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-  function productSearch(id){
+
+
+  function productSearch(list){
+    console.log(list)
       var item = []
-      item.push({item:'test1',carbon_val:10,type:'食物',weight:10})
-      item.push({item:'test2',carbon_val:10,type:'食物',weight:10})
-      item.push({item:'test3',carbon_val:10,type:'食物',weight:10})
+      item.push({item:'鐵罐',carbon_val:1,type:'食物',weight:10})
+      item.push({item:'鋁罐',carbon_val:2,type:'食物',weight:10})
+      item.push({item:'玻璃罐',carbon_val:3,type:'食物',weight:10})
+      item.push({item:'PCB_A',carbon_val:4,type:'PCB',weight:10})
+      item.push({item:'PCB_B',carbon_val:5,type:'PCB',weight:10})
+      item.push({item:'PCB_C',carbon_val:6,type:'PCB',weight:10})
+      item.push({item:'iphone',carbon_val:7,type:'手機',weight:10})
+      item.push({item:'iphone_pro',carbon_val:8,type:'手機',weight:10})
+      item.push({item:'iphone_pro_max',carbon_val:9,type:'手機',weight:10})
+      item.push({item:'邊框_1',carbon_val:7,type:'邊框',weight:10})
+      item.push({item:'邊框_2',carbon_val:8,type:'邊框',weight:10})
+      item.push({item:'邊框_3',carbon_val:9,type:'邊框',weight:10})
+      item.push({item:'A',carbon_val:7,type:'A',weight:1})
+      item.push({item:'B',carbon_val:8,type:'A',weight:1})
+      item.push({item:'C',carbon_val:9,type:'A',weight:1})
 
 
       var table = document.getElementById('material');
       var tbody = document.getElementById('material_tbody');
-      var partnumber_user_key = document.getElementById(id);
-      var tr = document.createElement('tr');
+      tbody.innerText =''
+      // var partnumber_user_key = document.getElementById(id);
 
 
-      for(var i=0;i<item.length;i++){
+      for(var k=0;k<list.length;k++){
+        // console.log(list[k])
+          var tr = document.createElement('tr');
+          for(var i=0;i<item.length;i++){
 
-        var td = document.createElement('td');
-        if(item[i].item==partnumber_user_key.value){
-            console.log(item[i].item)
-          for(var j=0;j<6;j++){
-            if(j==0){
-              var td = document.createElement('td');
-              td.innerText = item[i].item
-            }
-            if(j==1){
-              var td = document.createElement('td');
-              td.innerText = item[i].type
-            }
-            if(j==2){
-              var td = document.createElement('td');
-              td.innerText = '-'
-            }
-            if(j==3){
-              var td = document.createElement('td');
-              td.innerText = item[i].weight
-            }
-            if(j==4){
-              var td = document.createElement('td');
-              td.innerText = item[i].carbon_val
-            }
+              if(item[i].item==list[k]){
+                  // console.log(item[i].item)
+                for(var j=0;j<6;j++){
+                  if(j==0){
+                    var td = document.createElement('td');
+                    td.innerText = item[i].item
+                  }
+                  if(j==1){
+                    var td = document.createElement('td');
+                    td.innerText = item[i].type
+                  }
+                  if(j==2){
+                    var td = document.createElement('td');
+                    td.innerText = '-'
+                  }
+                  if(j==3){
+                    var td = document.createElement('td');
+                    td.innerText = item[i].weight
+                  }
+                  if(j==4){
+                    var td = document.createElement('td');
+                    td.innerText = item[i].carbon_val
+                  }
 
-            if(j==5){
-              var td = document.createElement('td');
-              td.innerText = '-'
-            }
+                  if(j==5){
+                    var td = document.createElement('td');
+                    td.innerText = '-'
+                  }
 
-              tr.appendChild(td);
+                    tr.appendChild(td);
+                }
+
+                    tbody.appendChild(tr)
+              }
+            }
           }
-
-              tbody.appendChild(tr)
-        }
-      }
-
-
 
 
   }
+
+  var list = [];
+  function toggleImage(obj){
+
+
+      if($(obj).prop("checked")) {
+        // console.log(obj.value)
+        list.push(obj.value)
+
+      }else{
+        // console.log(obj.value)
+        for(var i=0;i<list.length;i++){
+          if(obj.value==list[i]){
+              list.splice(i,1);
+          }
+        }
+      }
+      productSearch(list)
+    }
+
+
+
+
 </script>
 </body>
 </html>
