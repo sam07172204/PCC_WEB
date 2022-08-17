@@ -131,12 +131,14 @@
   }
 
   label img {
-    width: 100%;
-    height: 70%;
-    object-fit: cover;
-    clip-path: polygon(0% 0%, 100% 0, 100% 81%, 50% 100%, 0 81%);
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
+    /* text-align: center; */
+    margin-left: 5px;
+    width: 80%;
+    height: 80%;
+    /* object-fit: cover; */
+    /* clip-path: polygon(0% 0%, 100% 0, 100% 81%, 50% 100%, 0 81%); */
+    /* -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); */
   }
 
   label .cover-checkbox {
@@ -173,7 +175,7 @@
 
   label .info {
     text-align: center;
-    margin-top: 0.2rem;
+    margin-top: -0.2rem;
     font-weight: 600;
     font-size: 0.8rem;
   }
@@ -197,17 +199,17 @@
       <div class="cont-title">可樂罐</div>
       <div class="cont-main">
         <div class="cont-checkbox">
-          <input  type="checkbox" id="myCheckbox-1"  value="鐵罐" onchange="toggleImage(this)" />
+          <input  type="checkbox" id="myCheckbox-1"  value="塑膠罐" onchange="toggleImage(this)" />
           <label for="myCheckbox-1">
             <img
-              src="./carbon001.png"
+              src="./問卷圖片/Coke/Coke A.png"
             />
             <span class="cover-checkbox">
               <svg viewBox="0 0 12 10">
                 <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
               </svg>
             </span>
-            <div class="info">鐵罐</div>
+            <div class="info">塑膠罐</div>
           </label>
         </div>
 
@@ -215,7 +217,7 @@
           <input type="checkbox" id="myCheckbox-2" value="鋁罐"  onchange="toggleImage(this)" />
           <label for="myCheckbox-2">
             <img
-              src="./carbon001.png"
+              src="./問卷圖片/Coke/Coke B.png"
             />
             <span class="cover-checkbox">
               <svg viewBox="0 0 12 10">
@@ -230,7 +232,7 @@
           <input name="checkbox" type="checkbox" id="myCheckbox-3" value="玻璃罐"  onchange="toggleImage(this)" />
           <label for="myCheckbox-3">
             <img
-              src="./carbon001.png"
+              src="./問卷圖片/Coke/Coke C.png"
             />
             <span class="cover-checkbox">
               <svg viewBox="0 0 12 10">
@@ -243,14 +245,14 @@
 
       </div>
       <!-- 可樂 -->
-      <!-- 組別2 -->
+      <!-- PCB -->
       <div class="cont-title">PCB</div>
       <div class="cont-main">
         <div class="cont-checkbox">
           <input name="checkbox" type="checkbox" id="myCheckbox-4" value="PCB_A"   onchange="toggleImage(this)" />
           <label for="myCheckbox-4">
             <img
-              src="./carbon001.png"
+              src="./問卷圖片/PCB/PCBA.png"
             />
             <span class="cover-checkbox">
               <svg viewBox="0 0 12 10">
@@ -265,7 +267,7 @@
           <input name="checkbox" type="checkbox" id="myCheckbox-5"  value="PCB_B"  onchange="toggleImage(this)" />
           <label for="myCheckbox-5">
             <img
-              src="./carbon001.png"
+              src="./問卷圖片/PCB/PCB B.png"
             />
             <span class="cover-checkbox">
               <svg viewBox="0 0 12 10">
@@ -280,7 +282,7 @@
           <input name="checkbox" type="checkbox" id="myCheckbox-6"  value="PCB_C"   onchange="toggleImage(this)" />
           <label for="myCheckbox-6">
             <img
-              src="./carbon001.png"
+              src="./問卷圖片/PCB/PCB C.png"
             />
             <span class="cover-checkbox">
               <svg viewBox="0 0 12 10">
@@ -292,158 +294,161 @@
         </div>
 
       </div>
+      <!-- PCB -->
+
       <!-- 組別2 -->
+      <div class="cont-title">Bezel</div>
+      <div class="cont-main">
+        <div class="cont-checkbox">
+          <input name="checkbox" type="checkbox" id="myCheckbox-24" value="Bezel_A"   onchange="toggleImage(this)" />
+          <label for="myCheckbox-24">
+            <img
+              src="./問卷圖片/Bezel/Bezel A.png"
+            />
+            <span class="cover-checkbox">
+              <svg viewBox="0 0 12 10">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg>
+            </span>
+            <div class="info">Bezel A</div>
+          </label>
+        </div>
+
+        <div class="cont-checkbox">
+          <input name="checkbox" type="checkbox" id="myCheckbox-25"  value="Bezel_B"  onchange="toggleImage(this)" />
+          <label for="myCheckbox-25">
+            <img
+              src="./問卷圖片/Bezel/Bezel B.png"
+            />
+            <span class="cover-checkbox">
+              <svg viewBox="0 0 12 10">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg>
+            </span>
+            <div class="info">Bezel B</div>
+          </label>
+        </div>
+
+        <div class="cont-checkbox">
+          <input name="checkbox" type="checkbox" id="myCheckbox-26"  value="Bezel_C"   onchange="toggleImage(this)" />
+          <label for="myCheckbox-26">
+            <img
+              src="./問卷圖片/Bezel/Bezel C.png"
+            />
+            <span class="cover-checkbox">
+              <svg viewBox="0 0 12 10">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg>
+            </span>
+            <div class="info">Bezel C</div>
+          </label>
+        </div>
+
+      </div>
+
+      <!--\Bezel  -->
 
       <!-- 組別3 -->
       <div class="cont-title">iphone</div>
       <div class="cont-main">
         <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-7" value="iphone"    onchange="toggleImage(this)" />
+          <input name="checkbox" type="checkbox" id="myCheckbox-7" value="iphone_11"    onchange="toggleImage(this)" />
           <label for="myCheckbox-7">
             <img
-              src="./carbon001.png"
+              src="./問卷圖片/iphone/iphone_11.png"
             />
             <span class="cover-checkbox">
               <svg viewBox="0 0 12 10">
                 <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
               </svg>
             </span>
-            <div class="info">iphone </div>
+            <div class="info">iphone_11 </div>
           </label>
         </div>
 
         <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-8" value="iphone_pro"  onchange ="toggleImage(this)" />
+          <input name="checkbox" type="checkbox" id="myCheckbox-8" value="iphone_12"  onchange ="toggleImage(this)" />
           <label for="myCheckbox-8">
             <img
-              src="./carbon001.png"
+              src="./問卷圖片/iphone/iphone_12.png"
             />
             <span class="cover-checkbox">
               <svg viewBox="0 0 12 10">
                 <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
               </svg>
             </span>
-            <div class="info">iphone pro </div>
+            <div class="info">iphone_12 </div>
           </label>
         </div>
 
         <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-9" value="iphone_pro_max" onchange="toggleImage(this)" />
+          <input name="checkbox" type="checkbox" id="myCheckbox-9" value="iphone_13" onchange="toggleImage(this)" />
           <label for="myCheckbox-9">
             <img
-              src="./carbon001.png"
+                src="./問卷圖片/iphone/iphone_13.png"
             />
             <span class="cover-checkbox">
               <svg viewBox="0 0 12 10">
                 <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
               </svg>
             </span>
-            <div class="info">iphone pro max</div>
+            <div class="info">iphone_13</div>
           </label>
         </div>
 
       </div>
       <!-- 組別3 -->
       <!-- 組別4 -->
-      <div class="cont-title">邊框</div>
+      <div class="cont-title">LCM</div>
       <div class="cont-main">
         <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-10" value="邊框_1"    onchange="toggleImage(this)" />
+          <input name="checkbox" type="checkbox" id="myCheckbox-10" value="7 LCM"    onchange="toggleImage(this)" />
           <label for="myCheckbox-10">
             <img
-              src="./carbon001.png"
+              src="./問卷圖片/LCM/7 LCM.png"
             />
             <span class="cover-checkbox">
               <svg viewBox="0 0 12 10">
                 <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
               </svg>
             </span>
-            <div class="info">邊框_1 </div>
+            <div class="info">7 LCM </div>
           </label>
         </div>
 
         <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-11" value="邊框_2"  onchange ="toggleImage(this)" />
+          <input name="checkbox" type="checkbox" id="myCheckbox-11" value="10.1 LCM"  onchange ="toggleImage(this)" />
           <label for="myCheckbox-11">
             <img
-              src="./carbon001.png"
+              src="./問卷圖片/LCM/10.1 LCM.png"
             />
             <span class="cover-checkbox">
               <svg viewBox="0 0 12 10">
                 <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
               </svg>
             </span>
-            <div class="info">邊框_2</div>
+            <div class="info">10.1 LCM</div>
           </label>
         </div>
 
         <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-12" value="邊框_3" onchange="toggleImage(this)" />
+          <input name="checkbox" type="checkbox" id="myCheckbox-12" value="12.1 LCM" onchange="toggleImage(this)" />
           <label for="myCheckbox-12">
             <img
-              src="./carbon001.png"
+              src="./問卷圖片/LCM/12.1 LCM.png"
             />
             <span class="cover-checkbox">
               <svg viewBox="0 0 12 10">
                 <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
               </svg>
             </span>
-            <div class="info">邊框_3</div>
+            <div class="info">12.1 LCM</div>
           </label>
         </div>
 
       </div>
       <!-- 組別4 -->
-      <!-- 組別3 -->
-      <div class="cont-title">A</div>
-      <div class="cont-main">
-        <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-13" value="A"    onchange="toggleImage(this)" />
-          <label for="myCheckbox-13">
-            <img
-              src="./carbon001.png"
-            />
-            <span class="cover-checkbox">
-              <svg viewBox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-              </svg>
-            </span>
-            <div class="info">A </div>
-          </label>
-        </div>
 
-        <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-14" value="B"  onchange ="toggleImage(this)" />
-          <label for="myCheckbox-14">
-            <img
-              src="./carbon001.png"
-            />
-            <span class="cover-checkbox">
-              <svg viewBox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-              </svg>
-            </span>
-            <div class="info">B</div>
-          </label>
-        </div>
-
-        <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-15" value="C" onchange="toggleImage(this)" />
-          <label for="myCheckbox-15">
-            <img
-              src="./carbon001.png"
-            />
-            <span class="cover-checkbox">
-              <svg viewBox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-              </svg>
-            </span>
-            <div class="info">C</div>
-          </label>
-        </div>
-
-      </div>
-      <!-- 組別3 -->
 
       <button type="button" class="btn btn-sucess" onclick="productSearch()" style="background-color:#34BE82"><span
         id=""></span>加入比較</button>
@@ -531,21 +536,21 @@
        $("#compare").modal('show');
       console.log(list)
         var item = []
-        item.push({item:'鐵罐',carbon_val:1,type:'食物',weight:10})
+        item.push({item:'塑膠罐',carbon_val:1,type:'食物',weight:10})
         item.push({item:'鋁罐',carbon_val:2,type:'食物',weight:10})
         item.push({item:'玻璃罐',carbon_val:3,type:'食物',weight:10})
         item.push({item:'PCB_A',carbon_val:4,type:'PCB',weight:10})
         item.push({item:'PCB_B',carbon_val:5,type:'PCB',weight:10})
         item.push({item:'PCB_C',carbon_val:6,type:'PCB',weight:10})
-        item.push({item:'iphone',carbon_val:7,type:'手機',weight:10})
-        item.push({item:'iphone_pro',carbon_val:8,type:'手機',weight:10})
-        item.push({item:'iphone_pro_max',carbon_val:9,type:'手機',weight:10})
-        item.push({item:'邊框_1',carbon_val:7,type:'邊框',weight:10})
-        item.push({item:'邊框_2',carbon_val:8,type:'邊框',weight:10})
-        item.push({item:'邊框_3',carbon_val:9,type:'邊框',weight:10})
-        item.push({item:'A',carbon_val:7,type:'A',weight:1})
-        item.push({item:'B',carbon_val:8,type:'A',weight:1})
-        item.push({item:'C',carbon_val:9,type:'A',weight:1})
+        item.push({item:'iphone_11',carbon_val:7,type:'手機',weight:10})
+        item.push({item:'iphone_12',carbon_val:8,type:'手機',weight:10})
+        item.push({item:'iphone_13',carbon_val:9,type:'手機',weight:10})
+        item.push({item:'Bezel_A',carbon_val:7,type:'邊框',weight:10})
+        item.push({item:'Bezel_B',carbon_val:8,type:'邊框',weight:10})
+        item.push({item:'Bezel_C',carbon_val:9,type:'邊框',weight:10})
+        item.push({item:'7 LCM',carbon_val:7,type:'LCM',weight:1})
+        item.push({item:'10.1 LCM',carbon_val:8,type:'LCM',weight:1})
+        item.push({item:'12.1 LCM',carbon_val:9,type:'LCM',weight:1})
 
 
         var table = document.getElementById('material');
