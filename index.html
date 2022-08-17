@@ -453,20 +453,17 @@
 
 
           <!--MODAL LEFT-->
-            <div class="modal modal-left fade" id="compare" tabindex="0" role="dialog"
-            aria-labelledby="left_modal_xl" style="z-index: 99999; box-shadow: 15px 15px 15px #363635; overflow: scroll;">
-            <div class="modal-dialog modal-xl" role="document" style="    box-shadow: 0 0 3px #363635; z-index: 99999; width: 80%; ">
+            <!-- <div class="modal fade" id="compare" tabindex="0" role="dialog"
+             style="z-index: 99999; box-shadow: 15px 15px 15px #363635; overflow: scroll;"> -->
+             <div class="modal fade" id="compare" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <!-- <div class="modal-dialog modal-xl" role="document" style="    box-shadow: 0 0 3px #363635; z-index: 99999; width: 80%; "> -->
+              <div class="modal-dialog" role="document">
                 <div class="modal-content" >
                     <div class="modal-header">
                         <div class="row">
                             <h3 style="margin:0px"><i class="fa-solid fa-swords text-info fa-lg"></i></i> 比較結果 </h3>
                         </div>
 
-
-
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
                     </div>
                     <div class="modal-body" style="border:0; margin:0px; padding:0">
 
@@ -488,9 +485,10 @@
 
 
                     </div>
-
+                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   </div>
-              </div>
+
+              <!-- </div> -->
             </div>
             <!--MODAL LEFT-->
 
