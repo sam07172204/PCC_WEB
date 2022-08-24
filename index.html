@@ -532,65 +532,73 @@
 
 
     function productSearch(){
-       $("#compare").modal('show');
-      console.log(list)
-        var item = []
-        item.push({item:'可樂_500ml寶特瓶',carbon_val:'240g',weight:'-',source:'Coca cola environment review_Carbon footprint'})
-        item.push({item:'可樂_330ml鋁罐',carbon_val:'170g',weight:'-',source:'Coca cola environment review_Carbon footprint'})
-        item.push({item:'可樂_375ml玻璃瓶',carbon_val:'340g',weight:'-',source:'Coca cola environment review_Carbon footprint'})
-        item.push({item:'PCB A',carbon_val:'4.8g',weight:'20',source:'Simapro_Ecoinvent v3.01'})
-        item.push({item:'PCB B',carbon_val:'3.6g',weight:'15',source:'Simapro_Ecoinvent v3.01'})
-        item.push({item:'PCB C',carbon_val:'7.2 g',weight:'30',source:'Simapro_Ecoinvent v3.01'})
-        item.push({item:'iPhone 11',carbon_val:'72kg',weight:'-',source:'Product Environmental Report_Carbon footprint'})
-        item.push({item:'iPhone 12',carbon_val:'70kg',weight:'-',source:'Product Environmental Report_Carbon footprint'})
-        item.push({item:'iPhone 13',carbon_val:'69kg',weight:'-',source:'Product Environmental Report_Carbon footprint'})
-        item.push({item:'Bezel A (鍍鋅鋼板)',carbon_val:'0.3g',weight:'120',source:'Simapro_Ecoinvent v3.01'})
-        item.push({item:'Bezel B (鍍鋅鋼板)',carbon_val:'0.4g',weight:'150',source:'Simapro_Ecoinvent v3.01'})
-        item.push({item:'Bezel C (鋁板)',carbon_val:'0.7 g',weight:'40',source:'Simapro_Ecoinvent v3.01'})
-        item.push({item:'10.1 LCM',carbon_val:'28kg',weight:'180',source:'Simapro_Ecoinvent v3.01'})
-        item.push({item:'13.3 LCM',carbon_val:'32kg',weight:'350',source:'Simapro_Ecoinvent v3.01'})
-        item.push({item:'14.0 LCM',carbon_val:'35kg',weight:'475',source:'Simapro_Ecoinvent v3.01'})
+      if(list.length<=0){
+        alert("請選擇物品")
+      }
+      else{
+        $("#compare").modal('show');
+       // console.log(list)
+         var item = []
+         item.push({item:'可樂_500ml寶特瓶',carbon_val:'240g',weight:'-',source:'Coca cola environment review_Carbon footprint'})
+         item.push({item:'可樂_330ml鋁罐',carbon_val:'170g',weight:'-',source:'Coca cola environment review_Carbon footprint'})
+         item.push({item:'可樂_375ml玻璃瓶',carbon_val:'340g',weight:'-',source:'Coca cola environment review_Carbon footprint'})
+         item.push({item:'PCB A',carbon_val:'4.8g',weight:'20',source:'Simapro_Ecoinvent v3.01'})
+         item.push({item:'PCB B',carbon_val:'3.6g',weight:'15',source:'Simapro_Ecoinvent v3.01'})
+         item.push({item:'PCB C',carbon_val:'7.2 g',weight:'30',source:'Simapro_Ecoinvent v3.01'})
+         item.push({item:'iPhone 11',carbon_val:'72kg',weight:'-',source:'Product Environmental Report_Carbon footprint'})
+         item.push({item:'iPhone 12',carbon_val:'70kg',weight:'-',source:'Product Environmental Report_Carbon footprint'})
+         item.push({item:'iPhone 13',carbon_val:'69kg',weight:'-',source:'Product Environmental Report_Carbon footprint'})
+         item.push({item:'Bezel A (鍍鋅鋼板)',carbon_val:'0.3g',weight:'120',source:'Simapro_Ecoinvent v3.01'})
+         item.push({item:'Bezel B (鍍鋅鋼板)',carbon_val:'0.4g',weight:'150',source:'Simapro_Ecoinvent v3.01'})
+         item.push({item:'Bezel C (鋁板)',carbon_val:'0.7 g',weight:'40',source:'Simapro_Ecoinvent v3.01'})
+         item.push({item:'10.1 LCM',carbon_val:'28kg',weight:'180',source:'Simapro_Ecoinvent v3.01'})
+         item.push({item:'13.3 LCM',carbon_val:'32kg',weight:'350',source:'Simapro_Ecoinvent v3.01'})
+         item.push({item:'14.0 LCM',carbon_val:'35kg',weight:'475',source:'Simapro_Ecoinvent v3.01'})
 
 
-        var table = document.getElementById('material');
-        var tbody = document.getElementById('material_tbody');
-        tbody.innerText =''
-        // var partnumber_user_key = document.getElementById(id);
+         var table = document.getElementById('material');
+         var tbody = document.getElementById('material_tbody');
+         tbody.innerText =''
+         // var partnumber_user_key = document.getElementById(id);
 
 
-        for(var k=0;k<list.length;k++){
-          // console.log(list[k])
-            var tr = document.createElement('tr');
-            for(var i=0;i<item.length;i++){
+         for(var k=0;k<list.length;k++){
+           // console.log(list[k])
+             var tr = document.createElement('tr');
+             for(var i=0;i<item.length;i++){
 
-                if(item[i].item==list[k]){
-                    // console.log(item[i].item)
-                  for(var j=0;j<6;j++){
-                    if(j==0){
-                      var td = document.createElement('td');
-                      td.innerText = item[i].item
-                    }
-                    if(j==1){
-                      var td = document.createElement('td');
-                      td.innerText = item[i].weight
-                    }
-                    if(j==2){
-                      var td = document.createElement('td');
-                      td.innerText = item[i].carbon_val
-                    }
-                    if(j==3){
-                      var td = document.createElement('td');
-                      td.innerText = item[i].source
-                    }
+                 if(item[i].item==list[k]){
+                     // console.log(item[i].item)
+                   for(var j=0;j<6;j++){
+                     if(j==0){
+                       var td = document.createElement('td');
+                       td.innerText = item[i].item
+                     }
+                     if(j==1){
+                       var td = document.createElement('td');
+                       td.innerText = item[i].weight
+                     }
+                     if(j==2){
+                       var td = document.createElement('td');
+                       td.innerText = item[i].carbon_val
+                     }
+                     if(j==3){
+                       var td = document.createElement('td');
+                       td.innerText = item[i].source
+                     }
 
 
-                      tr.appendChild(td);
-                  }
+                       tr.appendChild(td);
+                   }
 
-                      tbody.appendChild(tr)
-                }
-              }
-            }
+                       tbody.appendChild(tr)
+                 }
+               }
+             }
+
+      }
+
+
 
 
     }
