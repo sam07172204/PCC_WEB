@@ -301,7 +301,7 @@
       <div class="cont-title">Bezel</div>
       <div class="cont-main">
         <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-24" value="Bezel A (鍍鋅鋼板)"   onchange="toggleImage(this)" />
+          <input name="checkbox" type="checkbox" id="myCheckbox-24" value="Frame A"   onchange="toggleImage(this)" />
           <label for="myCheckbox-24">
             <img style="width: 80%;height: 50%;margin-left: 13px;;margin-top: 10px;"
               src="./問卷圖片/Bezel/Fram A.png"
@@ -311,12 +311,12 @@
                 <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
               </svg>
             </span>
-            <div class="info" style="margin-top: 7px;">Bezel A (鍍鋅鋼板)</div>
+            <div class="info" style="margin-top: 7px;">Frame A</div>
           </label>
         </div>
 
         <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-25"  value="Bezel B (鍍鋅鋼板)"  onchange="toggleImage(this)" />
+          <input name="checkbox" type="checkbox" id="myCheckbox-25"  value="Frame B"  onchange="toggleImage(this)" />
           <label for="myCheckbox-25">
             <img  style="width: 70%;height: 55%;margin-left: 13px;;margin-top: 10px;"
               src="./問卷圖片/Bezel/Frame B.png"
@@ -326,12 +326,12 @@
                 <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
               </svg>
             </span>
-            <div class="info"  style="margin-top: 4px;">Bezel B (鍍鋅鋼板)</div>
+            <div class="info"  style="margin-top: 4px;">Frame B</div>
           </label>
         </div>
 
         <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-26"  value="Bezel C (鋁板)"   onchange="toggleImage(this)" />
+          <input name="checkbox" type="checkbox" id="myCheckbox-26"  value="Frame C"   onchange="toggleImage(this)" />
           <label for="myCheckbox-26">
             <img  style="width: 70%;height: 55%;margin-left: 13px;;margin-top: 10px;"
               src="./問卷圖片/Bezel/Frame C.png"
@@ -341,7 +341,7 @@
                 <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
               </svg>
             </span>
-            <div class="info"  style="margin-top: 4px;">Bezel C (鋁板)</div>
+            <div class="info"  style="margin-top: 4px;">Frame C</div>
           </label>
         </div>
 
@@ -516,7 +516,6 @@
 
 
       if($(obj).prop("checked")) {
-        // console.log(obj.value)
         list.push(obj.value)
 
       }else{
@@ -527,7 +526,7 @@
           }
         }
       }
-      // productSearch(list)
+
     }
 
 
@@ -548,9 +547,9 @@
          item.push({item:'iPhone 11',carbon_val:'72kg',weight:'-',source:'Product Environmental Report_Carbon footprint'})
          item.push({item:'iPhone 12',carbon_val:'70kg',weight:'-',source:'Product Environmental Report_Carbon footprint'})
          item.push({item:'iPhone 13',carbon_val:'69kg',weight:'-',source:'Product Environmental Report_Carbon footprint'})
-         item.push({item:'Bezel A (鍍鋅鋼板)',carbon_val:'0.3g',weight:'120',source:'Simapro_Ecoinvent v3.01'})
-         item.push({item:'Bezel B (鍍鋅鋼板)',carbon_val:'0.4g',weight:'150',source:'Simapro_Ecoinvent v3.01'})
-         item.push({item:'Bezel C (鋁板)',carbon_val:'0.7 g',weight:'40',source:'Simapro_Ecoinvent v3.01'})
+         item.push({item:'Frame A',carbon_val:'0.3g',weight:'120',source:'Simapro_Ecoinvent v3.01'})
+         item.push({item:'Frame B',carbon_val:'0.4g',weight:'150',source:'Simapro_Ecoinvent v3.01'})
+         item.push({item:'Frame C',carbon_val:'0.7 g',weight:'40',source:'Simapro_Ecoinvent v3.01'})
          item.push({item:'10.1 LCM',carbon_val:'28kg',weight:'180',source:'Simapro_Ecoinvent v3.01'})
          item.push({item:'13.3 LCM',carbon_val:'32kg',weight:'350',source:'Simapro_Ecoinvent v3.01'})
          item.push({item:'14.0 LCM',carbon_val:'35kg',weight:'475',source:'Simapro_Ecoinvent v3.01'})
