@@ -1,614 +1,257 @@
 <!DOCTYPE html>
 <html>
+  <style>
+@font-face {
+  font-family: Clip;
+  src: url("https://acupoftee.github.io/fonts/Clip.ttf");
+}
 
+body {
+  background-color: #141114;
+  background-image: linear-gradient(335deg, black 23px, transparent 23px),
+    linear-gradient(155deg, black 23px, transparent 23px),
+    linear-gradient(335deg, black 23px, transparent 23px),
+    linear-gradient(155deg, black 23px, transparent 23px);
+  background-size: 58px 58px;
+  background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+}
 
-<head>
-    <meta charset="utf-8" />
+.sign {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  background-image: radial-gradient(
+    ellipse 50% 35% at 50% 50%,
+    #6b1839,
+    transparent
+  );
+  transform: translate(-50%, -50%);
+  letter-spacing: 2;
+  left: 50%;
+  top: 50%;
+  font-family: "Clip";
+  text-transform: uppercase;
+  font-size: 6em;
+  color: #ffe6ff;
+  text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+    -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+    0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  animation: shine 2s forwards, flicker 3s infinite;
+}
 
-    <title>Welcom PCC WEB</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+.sign_title {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  background-image: radial-gradient(
+    ellipse 50% 35% at 50% 50%,
+    #6b1839,
+    transparent
+  );
+  transform: translate(-50%, -50%);
+  letter-spacing: 2;
+  left: 50%;
+  top: 30%;
+  font-family: "Clip";
+  text-transform: uppercase;
+  font-size: 6em;
+  color: #ffe6ff;
+  text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+    -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+    0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  animation: shine 2s forwards, flicker 3s infinite;
+}
 
-<style>
-
+@keyframes blink {
+  0%,
+  22%,
+  36%,
+  75% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
   }
+  28%,
+  33% {
+    color: #ff65bd;
+    text-shadow: none;
+  }
+  82%,
+  97% {
+    color: #ff2483;
+    text-shadow: none;
+  }
+}
 
-  table thead th {
-      border-bottom: 5px solid #f8c304;
-      vertical-align: middle;
-      font-size: 3.0vw;
-      color: #fbfbf7;
-      background-color: cadetblue;
-  }
-  table thead th p {
-      font-size: 16px;
-      color: #333;
-  }
-  table td {
-      text-align: center;
-      font-size: 3.0vw;
-  }
-  table td:first-child {
-      /* text-align: left; */
-  }
-  table tr:nth-last-child(-n+3) td {
-      line-height: 40px;
-      font-size: 3.0vw;
-  }
+.flicker {
+  animation: shine 2s forwards, blink 3s 2s infinite;
+}
 
+.fast-flicker {
+  animation: shine 2s forwards, blink 10s 1s infinite;
+}
 
-
-  * {
-    font-family: Lato;
-    margin: 0;
-    padding: 0;
-    --transition: 0.15s;
-    --border-radius: 0.5rem;
-    --background: #D61C4E;
-    --box-shadow: #D61C4E;
+@keyframes shine {
+  0% {
+    color: #6b1839;
+    text-shadow: none;
   }
-
-  .cont-bg {
-    min-height: 50vh;
-    background-image: radial-gradient(
-      circle farthest-corner at 7.2% 13.6%,
-      #59CE8F 0%,
-      #2B7A0B 90%
-    );
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  100% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
   }
+}
 
-  .cont-title {
-    color: white;
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-
-  .cont-main {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-  }
-
-  .cont-checkbox {
-    width: 80px;
-    height: 70px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-    background: white;
-    transition: transform var(--transition);
-  }
-
-  .cont-checkbox {
-    margin-bottom: 0.75rem;
-    margin-right: 0.75rem;
-  }
-
-  .cont-checkbox:active {
-    transform: scale(0.9);
-  }
-
-  input {
-    display: none;
-  }
-
-  input:checked + label {
+@keyframes flicker {
+  from {
     opacity: 1;
-    box-shadow: 0 0 0 3px var(--background);
   }
 
-  input:checked + label img {
-    -webkit-filter: none; /* Safari 6.0 - 9.0 */
-    filter: none;
+  4% {
+    opacity: 0.9;
   }
 
-  input:checked + label .cover-checkbox {
+  6% {
+    opacity: 0.85;
+  }
+
+  8% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  11% {
+    opacity: 0.922;
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  14% {
+    opacity: 0.95;
+  }
+
+  16% {
+    opacity: 0.98;
+  }
+
+  17% {
+    opacity: 0.9;
+  }
+
+  19% {
+    opacity: 0.93;
+  }
+
+  20% {
+    opacity: 0.99;
+  }
+
+  24% {
     opacity: 1;
-    transform: scale(1);
   }
 
-  input:checked + label .cover-checkbox svg {
-    stroke-dashoffset: 0;
+  26% {
+    opacity: 0.94;
   }
 
-  label {
-    display: inline-block;
-    cursor: pointer;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    opacity: 0.6;
+  28% {
+    opacity: 0.98;
   }
 
-  label img {
-    /* text-align: center; */
-    margin-left: 13px;
-    width: 60%;
-    height: 80%;
-    /* object-fit: cover; */
-    /* clip-path: polygon(0% 0%, 100% 0, 100% 81%, 50% 100%, 0 81%); */
-    /* -webkit-filter: grayscale(100%);
-    filter: grayscale(100%); */
+  37% {
+    opacity: 0.93;
   }
 
-  label .cover-checkbox {
-    position: absolute;
-    right: 5px;
-    top: 3px;
-    z-index: 1;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--box-shadow);
-    border: 2px solid #fff;
-    transition: transform var(--transition),
-      opacity calc(var(--transition) * 1.2) linear;
-    opacity: 0;
-    transform: scale(0);
+  38% {
+    opacity: 0.5;
   }
 
-  label .cover-checkbox svg {
-    width: 13px;
-    height: 11px;
-    display: inline-block;
-    vertical-align: top;
-    fill: none;
-    margin: 5px 0 0 3px;
-    stroke: #fff;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-dasharray: 16px;
-    transition: stroke-dashoffset 0.4s ease var(--transition);
-    stroke-dashoffset: 16px;
+  39% {
+    opacity: 0.96;
   }
 
-  label .info {
-    text-align: center;
-    margin-top: -0.2rem;
-    font-weight: 600;
-    font-size: 0.8rem;
+  42% {
+    opacity: 1;
   }
-</style>
+
+  44% {
+    opacity: 0.97;
+  }
+
+  46% {
+    opacity: 0.94;
+  }
+
+  56% {
+    opacity: 0.9;
+  }
+
+  58% {
+    opacity: 0.9;
+  }
+
+  60% {
+    opacity: 0.99;
+  }
+
+  68% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.9;
+  }
+
+  72% {
+    opacity: 0.95;
+  }
+
+  93% {
+    opacity: 0.93;
+  }
+
+  95% {
+    opacity: 0.95;
+  }
+
+  97% {
+    opacity: 0.93;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
 
 
-
-
-</head>
-<body>
-  <h2><img src="./carbon001.png" style="	width:60px;">產品碳足跡
-    <!-- <small> 整合管理 </small> -->
-  </h2>
-
-
-
-
-
-    <div class="cont-bg">
-      <div class="" style="display:block; font-size: 1.4rem;color:#FF1E00">Hint : 請點選下方圖片，並且按下『加入比較』按鈕得到答案</div>
-      <!-- 可樂 -->
-      <div class="cont-title">可口可樂</div>
-      <div class="cont-main">
-        <div class="cont-checkbox">
-          <input  type="checkbox" id="myCheckbox-1"  value="可樂_寶特瓶(250ml)" onchange="toggleImage(this)" />
-          <label for="myCheckbox-1">
-            <img style="width: 30%;height: 80%;margin-left: 30px;"
-              src="./問卷圖片/Coke/寶特瓶.png"
-            />
-            <span class="cover-checkbox">
-              <svg viewBox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-              </svg>
-            </span>
-            <div class="info">寶特瓶</div>
-          </label>
-        </div>
-
-        <div class="cont-checkbox">
-          <input type="checkbox" id="myCheckbox-2" value="可樂_鋁罐(250ml)"  onchange="toggleImage(this)" />
-          <label for="myCheckbox-2">
-            <img  style="width: 30%;height: 80%;margin-left: 30px;"
-              src="./問卷圖片/Coke/鋁瓶.png"
-            />
-            <span class="cover-checkbox">
-              <svg viewBox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-              </svg>
-            </span>
-            <div class="info">鋁瓶</div>
-          </label>
-        </div>
-
-        <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-3" value="可樂_玻璃瓶(250ml)"  onchange="toggleImage(this)" />
-          <label for="myCheckbox-3">
-            <img  style="width: 30%;height: 80%;margin-left: 30px;"
-              src="./問卷圖片/Coke/玻璃瓶.png"
-            />
-            <span class="cover-checkbox">
-              <svg viewBox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-              </svg>
-            </span>
-            <div class="info">玻璃瓶</div>
-          </label>
-        </div>
-
-      </div>
-      <!-- 可樂 -->
-      <!-- PCB -->
-      <div class="cont-title">PCBA</div>
-      <div class="cont-main">
-        <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-4" value="PCBA A"   onchange="toggleImage(this)" />
-          <label for="myCheckbox-4">
-            <img style="width: 70%;height: 30%;margin-left: 13px;;margin-top: 25px;"
-              src="./問卷圖片/PCB/PCBA.png"
-            />
-            <span class="cover-checkbox">
-              <svg viewBox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-              </svg>
-            </span>
-            <div class="info" style="margin-top: 7px;">PCBA A</div>
-          </label>
-        </div>
-
-        <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-5"  value="PCBA B"  onchange="toggleImage(this)" />
-          <label for="myCheckbox-5">
-            <img  style="width: 70%;height: 30%;margin-left: 13px;;margin-top: 25px;"
-              src="./問卷圖片/PCB/PCB B.png"
-            />
-            <span class="cover-checkbox">
-              <svg viewBox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-              </svg>
-            </span>
-            <div class="info"  style="margin-top: 7px;">PCBA B</div>
-          </label>
-        </div>
-
-        <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-6"  value="PCBA C"   onchange="toggleImage(this)" />
-          <label for="myCheckbox-6">
-            <img style="width: 70%;height: 30%;margin-left: 13px;;margin-top: 25px;"
-              src="./問卷圖片/PCB/PCB C.png"
-            />
-            <span class="cover-checkbox">
-              <svg viewBox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-              </svg>
-            </span>
-            <div class="info"  style="margin-top: 7px;">PCBA C</div>
-          </label>
-        </div>
-
-      </div>
-      <!-- PCB -->
-
-      <!-- 組別2 -->
-      <div class="cont-title">膠框</div>
-      <div class="cont-main">
-        <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-24" value="膠框一字型"   onchange="toggleImage(this)" />
-          <label for="myCheckbox-24">
-            <img style="width: 80%;height: 50%;margin-left: 13px;;margin-top: 10px;"
-              src="./問卷圖片/Bezel/一字形.png"
-            />
-            <span class="cover-checkbox">
-              <svg viewBox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-              </svg>
-            </span>
-            <div class="info" style="margin-top: 7px;">一字型</div>
-          </label>
-        </div>
-
-        <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-26"  value="膠框口字型"   onchange="toggleImage(this)" />
-          <label for="myCheckbox-26">
-            <img  style="width: 70%;height: 55%;margin-left: 13px;;margin-top: 10px;"
-              src="./問卷圖片/Bezel/口字型.png"
-            />
-            <span class="cover-checkbox">
-              <svg viewBox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-              </svg>
-            </span>
-            <div class="info"  style="margin-top: 4px;">口字型</div>
-          </label>
-        </div>
-
-
-        <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-25"  value="膠框ㄇ字型"  onchange="toggleImage(this)" />
-          <label for="myCheckbox-25">
-            <img  style="width: 70%;height: 55%;margin-left: 13px;;margin-top: 10px;"
-              src="./問卷圖片/Bezel/ㄇ字型.png"
-            />
-            <span class="cover-checkbox">
-              <svg viewBox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-              </svg>
-            </span>
-            <div class="info"  style="margin-top: 4px;">ㄇ字型</div>
-          </label>
-        </div>
-
-
-      </div>
-
-      <!--\Bezel  -->
-
-      <!-- 組別3 -->
-      <div class="cont-title">iPhone</div>
-      <div class="cont-main">
-        <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-7" value="iPhone 11"    onchange="toggleImage(this)" />
-          <label for="myCheckbox-7">
-            <img
-              src="./問卷圖片/iPhone/iPhone_11.png"
-            />
-            <span class="cover-checkbox">
-              <svg viewBox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-              </svg>
-            </span>
-            <div class="info">iPhone 11 </div>
-          </label>
-        </div>
-
-        <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-8" value="iPhone 12"  onchange ="toggleImage(this)" />
-          <label for="myCheckbox-8">
-            <img
-              src="./問卷圖片/iPhone/iPhone_12.png"
-            />
-            <span class="cover-checkbox">
-              <svg viewBox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-              </svg>
-            </span>
-            <div class="info">iPhone 12 </div>
-          </label>
-        </div>
-
-        <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-9" value="iPhone 13" onchange="toggleImage(this)" />
-          <label for="myCheckbox-9">
-            <img
-                src="./問卷圖片/iPhone/iPhone_13.png"
-            />
-            <span class="cover-checkbox">
-              <svg viewBox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-              </svg>
-            </span>
-            <div class="info">iPhone 13</div>
-          </label>
-        </div>
-
-      </div>
-      <!-- 組別3 -->
-      <!-- 組別4 -->
-      <div class="cont-title">模組</div>
-      <div class="cont-main">
-        <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-10" value='10.1" IAV Module'    onchange="toggleImage(this)" />
-          <label for="myCheckbox-10">
-            <img   <img  style="width: 90%;height: 55%;margin-left: 3px;;margin-top: 10px;"
-              src="./問卷圖片/LCM/10.1 LCM.png"
-            />
-            <span class="cover-checkbox">
-              <svg viewBox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-              </svg>
-            </span>
-            <div class="info"  style="margin-top: 4px;">10.1" IAV Module</div>
-          </label>
-        </div>
-
-        <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-11" value='13.3" NB Module' onchange ="toggleImage(this)" />
-          <label for="myCheckbox-11">
-            <img  <img  style="width: 90%;height: 55%;margin-left: 3px;;margin-top: 10px;"
-              src="./問卷圖片/LCM/13.3 LCM.png"
-            />
-            <span class="cover-checkbox">
-              <svg viewBox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-              </svg>
-            </span>
-            <div class="info"  style="margin-top: 4px;">13.3" NB Module</div>
-          </label>
-        </div>
-
-        <div class="cont-checkbox">
-          <input name="checkbox" type="checkbox" id="myCheckbox-12" value='14" NB Module' onchange="toggleImage(this)" />
-          <label for="myCheckbox-12">
-            <img  <img  style="width: 90%;height: 55%;margin-left: 3px;;margin-top: 10px;"
-              src="./問卷圖片/LCM/14.0 LCM.png"
-            />
-            <span class="cover-checkbox">
-              <svg viewBox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-              </svg>
-            </span>
-            <div class="info"  style="margin-top: 4px;">14" NB Module</div>
-          </label>
-        </div>
-
-      </div>
-      <!-- 組別4 -->
-
-
-      <button type="button" class="btn btn-sucess" onclick="productSearch()" style="background-color:#34BE82"><span
-        id=""></span>加入比較</button>
-
+  </style>
+  <head>
+    <meta charset="utf-8">
+    <title>anniversary</title>
+  </head>
+  <body>
+    
+    <div class="sign_title"  >
+      <span class="fast-flicker" >H</span>i &nbsp<span class="flicker">Renee</span>
     </div>
 
 
-
-          <!--MODAL LEFT-->
-            <!-- <div class="modal fade" id="compare" tabindex="0" role="dialog"
-             style="z-index: 99999; box-shadow: 15px 15px 15px #363635; overflow: scroll;"> -->
-             <div class="modal fade" id="compare" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <!-- <div class="modal-dialog modal-xl" role="document" style="    box-shadow: 0 0 3px #363635; z-index: 99999; width: 80%; "> -->
-              <div class="modal-dialog" role="document">
-                <div class="modal-content" >
-                    <div class="modal-header">
-                        <div class="row">
-                            <h3 style="margin:0px"><i class="fa-solid fa-swords text-info fa-lg"></i></i> 比較結果 </h3>
-                        </div>
-
-                    </div>
-                    <div class="modal-body" style="border:0; margin:0px; padding:0">
-
-                      <table id="material" class="table table-striped table-bordered dataTable no-footer dtr-inline" style="width:100%;float:left;text-align:center;">
-                          <thead style="background-color:#5F9EA0;color:white">
-                            <tr>
-                              <th style="color:white;width:20%;text-align:center;">品項</th>
-                              <th style="color:white;width:20%;text-align:center;">重量(g)</th>
-                              <th style="color:white;width:20%;text-align:center;">碳排放量 gCO2e</th>
-                              <th style="color:white;width:40%;text-align:center;">資料來源</th>
-                            </tr>
-
-                          </thead>
-                          <tbody id="material_tbody">
-                        </tbody>
-                     </table>
-
-
-                    </div>
-                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  </div>
-
-              <!-- </div> -->
-            </div>
-            <!--MODAL LEFT-->
-
-
-
-
-
-
-<!-- <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-<script>
-
-  var list = [];
-
-
-  function toggleImage(obj){
-
-
-      if($(obj).prop("checked")) {
-        list.push(obj.value)
-
-      }else{
-        // console.log(obj.value)
-        for(var i=0;i<list.length;i++){
-          if(obj.value==list[i]){
-              list.splice(i,1);
-          }
-        }
-      }
-
-    }
-
-
-    function productSearch(){
-      if(list.length<=0){
-        alert("請選擇物品")
-      }
-      else{
-        $("#compare").modal('show');
-       // console.log(list)
-         var item = []
-
-         item.push({item1:'可樂_寶特瓶(250ml)',item:'可樂_寶特瓶(250ml)',carbon_val:'252',weight:'275',source:'台灣碳足跡標籤'})
-         item.push({item1:'可樂_鋁罐(250ml)',item:'可樂_鋁罐(250ml)',carbon_val:'315',weight:'263',source:'台灣碳足跡標籤'})
-         item.push({item1:'可樂_玻璃瓶(250ml)',item:'可樂_玻璃瓶(250ml)',carbon_val:'393',weight:'494',source:'台灣碳足跡標籤'})
-         item.push({item1:'PCBA A',item:'PCBA A',carbon_val:'2,700',weight:'20',source:'Simapro_Ecoinvent v3.01'})
-         item.push({item1:'PCBA B',item:'PCBA B',carbon_val:'1,900',weight:'14',source:'Simapro_Ecoinvent v3.01'})
-         item.push({item1:'PCBA C',item:'PCBA C',carbon_val:'4,100',weight:'31',source:'Simapro_Ecoinvent v3.01'})
-         item.push({item1:'iPhone 11',item:'iPhone 11',carbon_val:'72,000',weight:'194',source:'Apple_Product Environmental Report'})
-         item.push({item1:'iPhone 12',item:'iPhone 12',carbon_val:'70,000',weight:'162',source:'Apple_Product Environmental Report'})
-         item.push({item1:'iPhone 13',item:'iPhone 13',carbon_val:'64,000',weight:'173',source:'Apple_Product Environmental Report'})
-         item.push({item1:'膠框\n一字型',item:'膠框一字型',carbon_val:'8',weight:'1',source:'Simapro_Ecoinvent v3.01'})
-         item.push({item1:'膠框\nㄇ字型',item:'膠框ㄇ字型',carbon_val:'16',weight:'2',source:'Simapro_Ecoinvent v3.01'})
-         item.push({item1:'膠框\n口字型',item:'膠框口字型',carbon_val:'110',weight:'14',source:'Simapro_Ecoinvent v3.01'})
-         item.push({item1:'10.1" IAV Module',item:'10.1" IAV Module',carbon_val:'3,100',weight:'295',source:'Simapro_Ecoinvent v3.01'})
-         item.push({item1:'13.3" NB Module',item:'13.3" NB Module',carbon_val:'2,500',weight:'157',source:'Simapro_Ecoinvent v3.01'})
-         item.push({item1:'14" NB Module',item:'14" NB Module',carbon_val:'2,800',weight:'216',source:'Simapro_Ecoinvent v3.01'})
-
-
-         var table = document.getElementById('material');
-         var tbody = document.getElementById('material_tbody');
-         tbody.innerText =''
-         // var partnumber_user_key = document.getElementById(id);
-
-
-         for(var k=0;k<list.length;k++){
-           // console.log(list[k])
-             var tr = document.createElement('tr');
-             for(var i=0;i<item.length;i++){
-
-                 if(item[i].item==list[k]){
-                     // console.log(item[i].item)
-                   for(var j=0;j<6;j++){
-                     if(j==0){
-                       var td = document.createElement('td');
-                       td.innerText = item[i].item1
-                     }
-                     if(j==1){
-                       var td = document.createElement('td');
-                       td.innerText = item[i].weight
-                     }
-                     if(j==2){
-                       var td = document.createElement('td');
-                       td.innerText = item[i].carbon_val
-                     }
-                     if(j==3){
-                       var td = document.createElement('td');
-                       td.innerText = item[i].source
-                     }
-
-
-                       tr.appendChild(td);
-                   }
-
-                       tbody.appendChild(tr)
-                 }
-               }
-             }
-
-      }
-
-
-
-
-    }
-
-
-
-
-
-</script>
-</body>
+    <div class="sign"  onclick="javascript:location.href='./renee&sam.html'">
+      <span class="fast-flicker" >Click</span>&nbsp<span class="flicker">here </span>
+    </div>
+  </body>
 </html>
